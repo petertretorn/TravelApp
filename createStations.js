@@ -24,3 +24,9 @@ pd.save(function(err) {
 	if (err) console.log('failed');
 	else console.log('success');
 })
+
+function createPriceData() {
+
+}
+
+createPriceData();
