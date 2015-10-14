@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TravelApp">
   <head>
     <title>TravelApp</title>
     
   </head>
-  <body>
+  <body ng-controller="AdminController as vm">
     <h1>The TravelApp</h1>
+    <h2>{{2+2}}</h2>
+    <h2>{{vm.message}}</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
   </body>
 </html>
