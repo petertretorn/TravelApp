@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+.mybtn {
+	padding: 0px 0px;
+}
+
+input {
+	margin: 0px;
+	padding: 0px;
+	color: green;
+}
+
+.myStyle {
+	color: red;
+}

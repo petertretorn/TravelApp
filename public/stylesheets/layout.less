@@ -1,0 +1,23 @@
+@yellowish: #FFC; 
+a {
+	background-color: @yellowish; 
+}
+
+blockquote {
+	background-color: #333;
+	color: @yellowish;
+}
+
+.border-radius (@value) {
+	-webkit-border-radius: @value;
+	-moz-border-radius: @value;
+	border-radius: @value;
+	background-clip: padding-box;
+}
+
+.slightly-rounded {
+	.border-radius(2px); 
+}
+.very-rounded {
+	.border-radius(16px); 
+}

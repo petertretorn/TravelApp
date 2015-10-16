@@ -2,20 +2,57 @@
 <html ng-app="TravelApp">
   <head>
     <title>TravelApp</title>
-    
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body ng-controller="AdminController as vm">
-    <h1>The TravelApp</h1>
-    <h2>{{2+2}}</h2>
-    <h2>{{vm.message}}</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="containter">
+      <h1>The TravelApp</h1>
+      <div class="well">
+        <h2>Administration Page</h2>
+      </div>
 
-    <script type="text/javascript" src="/lib/angular/angular.js"></script>
-    <script type="text/javascript" src="/app.js"></script>
+      <p class="myStyle">lorem dfa a df adf adf</p>
+
+      <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <td>From</td>
+              <td>To</td>
+              <td>Price</td>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr ng-repeat="pd in vm.priceData" ng-include="vm.getTemplate(pd)">
+
+            <script type="text/ng-template" id="display">
+              <td>{{pd.from}}</td>
+              <td>{{pd.to}}</td>
+              <td>{{pd.price}}</td>
+              <td class="btn btn-primary btn-sm" ng-click="vm.editPriceData(pd)">Edit</td>
+            </script>
+
+            <script type="text/ng-template" id="edit">
+              <td>
+                <input type="text" ng-model="pd.from" class="form-control input-sm"/>
+              </td>
+              <td>
+                <input type="text" ng-model="pd.to" class="form-control input-sm"/>
+              </td>
+              <td>
+                <input type="text" ng-model="pd.price" class="form-control input-sm"/>
+              </td>
+              <td>
+                <button class="btn btn-primary btn-sm" ng-click="vm.savePriceData(pd)">Save</button>
+              </td>
+            </script>
+          </tr>
+          </tbody>
+      </table>
+
+      <script type="text/javascript" src="/lib/angular/angular.js"></script>
+      <script type="text/javascript" src="/app.js"></script>
+    </div>
   </body>
 </html>
