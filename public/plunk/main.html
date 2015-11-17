@@ -1,0 +1,22 @@
+    <form class="form-horizontal">
+      <div class="form-group row">
+        <label for="from" class="control-label col-xs-2">From</label>
+        <div class="col-xs-6">
+          <select ng-change="vm.onChangeFromStation()" ng-disabled="vm.checkedIn" name="from" id="from" class="form-control col-xs-6" ng-model="vm.travel.from" ng-options="dest for dest in vm.allDestinations"></select>
+        </div>
+        <button ng-disabled="vm.checkedIn || !vm.travel.from" class="col-xs-3 checkInOutButton btn btn-success" ng-click="vm.checkIn()">Check In</button>
+      </div>
+      <div class="form-group row">
+        <label for="from" class="control-label col-xs-2">To</label>
+        <div class="col-xs-6 ">
+          <select ng-change="vm.onChangeToStation()" ng-disabled="!vm.checkedIn" class="form-control col-xs-6" ng-model="vm.travel.to" ng-options="dest for dest in vm.toDestinations"></select>
+        </div>
+        <button ng-disabled="!vm.checkedIn || !vm.travel.to" class="col-xs-3 checkInOutButton btn btn-success" ng-click="vm.checkOut()">Check Out</button>
+      </div>
+    </form>
+    <div class="bottumButton">
+      <a href="#/account" class="btn btn-info">View Account</a>
+    </div>
+    <div ng-show="vm.checkedIn" class="notification">
+      <span class="text-warning">You are currently checked in!</span>
+    </div>

@@ -1,0 +1,12 @@
+
+.checkInOutButton {
+  width: 90px;
+}
+
+.notification, .bottumButton {
+  margin-top: 20px;
+}
+
+.floated {
+  float: left;
+}

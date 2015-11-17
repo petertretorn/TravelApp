@@ -1,0 +1,30 @@
+<div ng-show="!vm.travels.length">
+  No registered travels
+</div>
+
+<div ng-show="!!vm.travels.length">
+  <h4>Registered Travels</h4>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>From</td>
+        <td>To</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="travel in vm.travels">
+        <td>{{ travel.from }}</td>
+        <td>{{ travel.to }}</td>
+        <td>{{ travel.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  Account Balance: kr. {{ vm.balance }}
+</div>
+<div class="bottumButton">
+  <a href="#/" class="btn btn-info">Back</a>
+</div>
